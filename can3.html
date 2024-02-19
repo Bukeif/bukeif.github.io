@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Particle-forMouse</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="./css/main.css" rel="stylesheet">
+        <script src="./js/nav.js"></script>
+        <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+
+        <script>
+            $(function(){
+                let nv = $("#munav");
+                nv.html(navbar);
+            })
+            
+        </script>
+        <style>
+            #canvas{
+                position: fixed;
+            }
+            body{
+                overflow: hidden;   
+            }
+            #canvas{
+                background: #23232b00;
+                background-size: cover; 
+                background-position: center;
+                margin:0;
+                padding:0;;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="munav">
+
+        </div>
+        <canvas id="canvas">
+        
+        </canvas>  
+        
+        <script>
+            /*
+            *utils
+            */
+            const checkDistance = (x1,y1,x2,y2) =>{
+                return Math.sqrt(Math.pow(x2 - x1,2) + Math.pow(y2 - y1,2));
+            };
+            const decToHex = (dec) => {
+                dec = parseInt(dec); // ensure the dec parameter is integer
+                return dec.toString(16);//use toString(16) to transform the dec to hex
+            }
+            /*
+            *basic
+            */
+            let loopId, canvas, ctx, particles;
+            const options = {
+                particlesColor: "#ffffff",//粒子顏色
+                lineColor: "#2ecce0", //線的顏色
+                lineWidth: 0.8, //線的寬度
+                particleAmount: 60, //粒子數量
+                defaultRadius: 4, //粒子預設半徑
+                variantRadius: 3,//粒子半徑變化量
+                particlesSpeed:3,//粒子移動速度
+                defaultSpeed: 0.8,
+                varaintSpeed: 1,
+                linkRadius: 140, //距離多少時連線
+                mouseColor: "#f66332",
+                mouseRadius: 200, //滑鼠的半徑
+                mousePushPower: 2 //滑鼠推移的力量
+            }
+            const getCanvas = () => {
+                canvas = document.querySelector("#canvas");
+                ctx = canvas.getContext("2d");
+            };
+
+            let canvasSize;
+            //let vw = document.documentElement.clientWidth;
+            //let vh = document.documentElement.clientHeight; 
+            let vw, vh;
+            const resize = () => {  
+                vw = document.documentElement.clientWidth; 
+                vh = document.documentElement.clientHeight;
+                canvas.width = vw;
+                canvas.height = vh;
+            };
+            const setResize = () => {
+                resize();
+                window.addEventListener("resize",resize);
+            };
+
+            
+
+            /*
+             *particle
+             */
+            class Particle{
+                constructor(){  
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.color = options.particlesColor;
+                    this.radius = options.defaultRadius - Math.random() * options.variantRadius;
+                    //this.speed = options.defaultSpeed + Math.random() * options.varainttSpeed;
+                    //this.directionAngle = Math.floor(Math.random() * 360);
+                    this.vector ={
+                        //x: Math.cos(this.dirctionAngle) * this.speed,
+                        //y: Math.sin(this.dirctionAngle) * this.speed
+                        x: options.particlesSpeed * (Math.random() - 0.5),
+                        y: options.particlesSpeed * (Math.random() - 0.5),
+                    };
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y,this.radius, 0,Math.PI * 2);
+                    //ctx.closePath();
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+
+                encounterBorder(){
+                    if(this.x >= vw || this.x <= 0){
+                        this.vector.x *= -1;
+                    }
+                    if(this.y >= vh || this.y <=0){
+                        this.vector.y *= -1;
+                    }
+                    if (this.x > vw) this.x = vw;
+                    if (this.y > vh) this.y  = vh;
+                    if (this.x < 0 ) this.x = 0;
+                    if (this.y < 0 ) this.y = 0;
+                }
+
+                encounterMouse() {
+                    const distance = checkDistance(this.x , this.y , mouse.x , mouse.y);
+
+                    if (distance <= options.mouseRadius){
+                        this.vector.x *= -1;
+                        this.vector.y *= -1;
+                    }
+                    if(distance < options.mouseRadius){
+                        const distanceX = this.x - mouse.x;
+                        const distanceY = this.y - mouse.y;
+                        this.x += (distanceX / distance) * options.mousePushPower;
+                        this.y += (distanceY / distance) * options.mousePushPower;
+                    }
+                }
+                update() {
+                    this.encounterBorder();
+                    this.encounterMouse();
+                    this.x += this.vector.x;
+                    this.y += this.vector.y;
+                }
+            }
+
+            /*
+             *Mouse
+             */
+            let mouse ={
+                x: 0,
+                y: 0    
+            };
+            const initMouse = () => {
+                canvas.addEventListener('mousemove',(e) =>{
+                    mouse.x = e.x;
+                    mouse.y = e.y;
+                });
+            }
+            const initialiseElements = () => {
+                particles = [];
+                for (let i = 0; i < options.particleAmount; i++){
+                    particles.push(new Particle());
+                }
+            }
+            /*
+             * Scene
+             */
+            const drawParticle = () => {
+                for(let i = 0; i< particles.length; i++){
+                    particles[i].update();
+                    particles[i].draw();
+                }
+            };
+            const drawLine = () => {
+                for(let i = 0; i < particles.length; i++){
+                    for(let j = i + 1; j < particles.length; j++){
+                        const distance = checkDistance(
+                            particles[i].x,
+                            particles[i].y,
+                            particles[j].x,
+                            particles[j].y
+                        );
+                        const opacity = 1 - distance / options.linkRadius;
+                        if( opacity > 0 ){
+                            const lineOpacity = decToHex(opacity * 100);
+                            ctx.lineWidth = options.lineWidth;;
+                            ctx.strokeStyle = `${options.lineColor}${lineOpacity}`;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.closePath();
+                            ctx.stroke();
+                        }
+                    }
+                }
+            };
+            const drawScene = () =>{
+                drawParticle();
+                drawLine();
+            };
+            const startAnimation = () =>{
+                ctx.clearRect(0,0,vw,vh);
+                drawScene();
+                requestAnimationFrame(startAnimation);
+            };
+            
+            const init = () =>{
+                getCanvas();
+                setResize();
+                initMouse();
+                initialiseElements();
+                startAnimation();
+            };
+            init();
+        </script>
+    </body>
+</html>

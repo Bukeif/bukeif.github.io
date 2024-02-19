@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 18px;
+    background-color: rgba(255, 255, 255, 0.781);
+    padding: 200px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: white;*/
+    border-radius: 999px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body[scroll]::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*BackGround-Img and Nav blur*/
+html,
+body {
+    font-family: "poppins", "Noto Sans TC", sans-serif;
+}
+
+body {
+    background: url(https://i.imgur.com/37COIgw.png) no-repeat;
+    background-attachment: fixed;
+    /* 讓背景固定，即便元素的內容滾動，背景也不會隨著元素移動 */
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    /*backdrop-filter: blur(2px);  背景濾鏡設定為 blur */
+    margin: 0 auto;
+}
+
+.nav-home-text {
+    color: rgb(255, 17, 28);
+}
+
+.nav-bg-custom-1,
+.dropdown-menu {
+    background: rgba(255, 255, 255, 0.226);
+    position: relative;
+    box-shadow: 0 0 5px 4px hsla(0, 0%, 100%, .3) inset,
+        0 .5em 1em rgba(0, 0, 0, 0.418);
+}
+
+.nav-bg-custom-1::before,
+.dropdown-menu::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /*debug用的紅色背景 */
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.dropdown-menu,
+.dropdown-menu::before {
+    background: rgba(255, 255, 255, 0.418);
+    /*debug用的紅色背景 */
+    margin-top: 0.46rem !important;
+}
+
+.nav-text-custom-1 .nav-link,
+.dropdown-item {
+    font-weight: bold;
+}
+
+/* flex justify-content/align-content/flow*/
+.big-container1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+}
+
+.normal-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*所有彈性子項目對齊於主軸*/
+.jc-start {
+    justify-content: start;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-end {
+    justify-content: end;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-se {
+    justify-content: space-evenly;
+}
+
+/*子項目對齊父項目的相交軸*/
+.ac-stretch {
+    align-content: stretch;
+}
+
+.ac-start {
+    align-content: start;
+}
+
+.ac-center {
+    align-content: center;
+}
+
+.ac-end {
+    align-content: end;
+}
+
+.ac-sb {
+    align-content: space-between;
+}
+
+.ac-sa {
+    align-content: space-around;
+}
+
+.ac-se {
+    align-content: space-evenly;
+}
+
+/*所有彈性子項目對齊於相交軸*/
+.ai-stretch {
+    align-items: stretch;
+}
+
+.ai-start {
+    align-items: start;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.ai-end {
+    align-items: end;
+}
+
+.ai-baseline {
+    align-items: baseline;
+}
+
+.big-container1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+}
+
+.normal-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container1-1 {
+    display: flex;
+    flex-flow: row wrap;
+    width: 240px;
+    height: 240px;
+    background-color: #a5def5;
+}
+
+.container1-2 {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 240px;
+    height: 240px;
+    background-color: #a5def5;
+}
+
+.container1-3 {
+    display: flex;
+    flex-flow: column wrap;
+    width: 240px;
+    height: 240px;
+    background-color: #a5def5;
+}
+
+.container1-4 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 240px;
+    height: 240px;
+    background-color: #a5def5;
+}
+
+.over {
+    overflow: auto;
+}
+
+.text1 {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    margin: 20px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px 5px hsla(0, 0%, 100%, .3) inset,
+        0 .5em 1em rgba(0, 0, 0, 0.418);
+}
+
+.text1::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /*debug用的紅色背景 */
+    filter: blur(20px);
+    z-index: -1;
+}

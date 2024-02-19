@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MenuTest</title>
+        <script>
+            const collect_issue_severity = {
+                low: 1,
+                medium:2,
+                high: 3,
+            };
+            const getCollectIssueSeverity = (severityCode) =>{
+                switch(severityCode) {
+                    case collect_issue_severity.low: 
+                    return 'Low';
+                    case collect_issue_severity.medium: 
+                    return 'Medium';
+                    case collect_issue_severity.high: 
+                    return 'High';
+                    default: 
+                        return 'Indeterminate';
+                }
+            }
+            console.log(getCollectIssueSeverity(2));
+
+            document.addEventListener('DOMContentLoaded', function() {
+                    const dropMenu = 
+                        document.querySelectorAll(".dropdown__menu");
+                    const dropSubMenu = 
+                        document.querySelectorAll(".dropdown__subMenu");
+                        
+                    dropMenu.forEach((menu) => {
+                        const menuRect = menu.getBoundingClientRect();
+                        if (menuRect.right > window.innerWidth)
+                        menu.style.right = 0;
+                    });
+                    dropSubMenu.forEach((subMenu) => {
+                        const subMenuRect = subMenu.getBoundingClientRect();
+                        if (subMenuRect.right > window.innerWidth)
+                        subMenu.style.left = `${-subMenuRect.width - 16}px`;
+                    });
+                });
+            
+        </script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing:border-box;
+            }
+            html,
+            body {
+                height: 100%;
+                font-family: "poppins";
+            }
+            body{
+                background-color: rgb(231, 205, 170);
+                overflow-x: hidden;
+            }
+
+            ul, li{
+                list-style: none;
+            }
+            .header{
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-inline: 64px;
+                height: 128px;
+                background: #141418;
+            }
+            .menu{
+                display: flex;
+                gap: 44px;
+                height: 100%;
+            }
+            .menu__item {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+            .dropdown__item{
+                position: relative;
+            }
+            .dropdown__menu{
+                background: #141418;
+                position: absolute;
+                top: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                transition: 0.5s;
+                padding: 32px;
+            }
+            .dropdown__subItem{
+                position: relative;
+            }
+            .dropdown__subMenu{
+                background: #141418;
+                position: absolute;
+                left: calc(100% + 32px);
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                padding: 32px;
+            }
+
+            .dropdown__menu{
+                transform: translateY(24px);
+                visibility: hidden;
+                opacity: 0;
+            }
+            .dropdown__item:hover .dropdown__menu{
+                opacity:1;
+                visibility: visible;
+                transform: translateY(0px);
+            }
+            .dropdown__subMenu{
+                transform: translateY(24px);
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.5s;
+            }
+            .dropdown__subItem:hover .dropdown__subMenu{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .item__link{
+                transition: 0.4s;
+                white-space: nowrap;
+            }
+            .menu__item:hover > .item__link{
+                color:#23cce0;
+            }
+            .logo{
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo"><a href="./index.html">LOGO</a></h1>
+
+            <ul class="menu">
+                <!--- item1 -->
+                <li class="menu__item">
+                    <a class="item__link">Home</a>
+                </li>
+    
+                <!--- item 2 --->
+                <li class="menu__item dropdown__item">
+                    <a class="item__link">Compony</a>
+                    <!-- dropdown menu -->
+                    <ul class="dropdown__menu">
+                        <li class="menu__item">
+                            <a class="item__link">About</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="item__link">Founder</a>
+                        </li>
+                        <li class="menu__item dropdown__subItem">
+                            <a class="item__link">History</a>
+                            <ul class="dropdown__subMenu">
+                                <li class="menu__item">
+                                    <a class="item__link">1981 ~ 2000</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="item__link">2001 ~ 2020</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="item__link">2021 ~ now</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+    
+                <!-- item 3 -->
+                <li class="menu__item">
+                    <a class="item__link">
+                         Products
+                    </a>
+                </li>
+    
+                <!--- item 4 --->
+                <li class="menu__item dropdown__item">
+                    <a class="item__link">Analytics</a>
+                    <!-- dropdown menu -->
+                    <ul class="dropdown__menu">
+                        <li class="menu__item">
+                            <a class="item__link">Overview</a>
+                        </li>
+                        <li class="menu__item dropdown__subItem">
+                            <a class="item__link">Transactions</a>
+                            <ul class="dropdown__subMenu">
+                                <li class="menu__item">
+                                    <a class="item__link">Documents</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item dropdown__subItem">
+                            <a class="item__link">Reports</a>
+                            <ul class="dropdown__subMenu">
+                                <li class="menu__item">
+                                    <a class="item__link">Payments</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+    
+                <!--- item 5 --->
+                <li class="menu__item dropdown__item">
+                    <a class="item__link">Users</a>
+                    <!-- dropdown menu -->
+                    <ul class="dropdown__menu">
+                        <li class="menu__item">
+                            <a class="item__link">Profiles</a>
+                        </li>
+                        <li class="menu__item dropdown__subItem">
+                            <a class="item__link">Accounts</a>
+                            <ul class="dropdown__subMenu">
+                                <li class="menu__item">
+                                    <a class="item__link">Business</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__item dropdown__subItem">
+                            <a class="item__link">Messages</a>
+                            <ul class="dropdown__subMenu">
+                                <li class="menu__item">
+                                    <a class="item__link">Individual</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+    </body>
+</html>

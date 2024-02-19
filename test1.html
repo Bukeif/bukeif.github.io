@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/main.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/nav.js"></script>
+        <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <script>
+            window.addEventListener('scroll',function(){
+                document.body.toggleAttribute('scroll',true);
+                if(this.timer) clearTimeout(this.timer)
+                this.timer = setTimeout(() => {
+                    document.body.toggleAttribute('scroll');
+                    console.log(timer)
+                },500);
+            });
+            $(function(){
+                let nv = $("#munav");
+                nv.html(navbar);
+                
+            })
+            
+            function getData(callback){
+                callback(Response);
+            }
+            getData(function(data){
+                console.log("123");
+            });
+            /* //彈跳窗試玩
+            let sign = prompt("what's your sign?");
+            if(sign.toLowerCase()==="scorpio"){
+                alert("wow! i'm a scorpio too!");
+            }else{
+                alert("sorry i don't know "+sign);
+            }
+            sign = window.prompt("Are you feeling lucky", "sureq"); // open the window with Text "Are you 
+        */
+        </script>
+        <style>
+            body{
+                color: aliceblue;
+            }
+            .text-box{
+                height: 500px;
+                font-weight:bold;
+                display:flex; 
+                justify-content: flex-end;
+                text-align: center;
+            }
+            .active{
+                background-color: red;
+            }
+            .const1{
+                padding: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="munav">
+
+        </div>
+        
+        <div class="const1">
+            <div class="text-box">
+                文本練習1<br>
+                    23文本練習<br>
+                    文本練習4<br>
+                    45文本練習<br>
+            </div>
+
+            <button id="foo">click me </button>
+            <script>
+                function myAlert(){
+                    alert("hey");
+                }
+                
+                const ele = document.querySelector('#foo');
+                ele.addEventListener('click',myAlert);
+                //ele.removeEventListener('click',myAlert);
+                
+            </script>
+            <p id="text1"></p>
+            <script>
+                let users = {
+                    id1: {
+                        name: 'thisWeb1',
+                        password: 123
+                    },
+                    id2: {
+                        name: 'thisWeb2',
+                        password: 456
+                    },
+                    id3: {
+                        name: 'thisWeb3',
+                        password: 789
+                    }
+                }
+                //const text = document.querySelector("#text");
+                text1.innerHTML = Object.values(users)
+                .map((users) => `${users.name} : ${users.password} <br/>`)
+                .join('');
+
+            </script>
+            <div>
+                <ul>
+                    <li></li>
+
+                </ul>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>
