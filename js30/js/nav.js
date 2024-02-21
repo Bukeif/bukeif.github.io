@@ -1,5 +1,5 @@
 let nav = `
-<h1 class="logo"><a href="../index.html">LOGO</a></h1>
+<h1 class="logo"><a href="../../index.html">LOGO</a></h1>
 
 <ul class="menu">
                 <!--- item1 -->
