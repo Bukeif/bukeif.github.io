@@ -13,7 +13,7 @@ var navbar=`
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">遊樂園</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./color1.html">黑沙</a></li>
+          <li><a class="dropdown-item" href="./BD/color1.html">黑沙</a></li>
         </ul>
       </li>
       <li class="nav-item">
