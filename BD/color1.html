@@ -5,10 +5,10 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./css/main.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="./js/nav.js"></script>
-        <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <!-- <script src="./js/nav.js"></script> -->
+        <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
         <script>
             var c_count = {
                 blue:0,
@@ -18,8 +18,8 @@
             }
             
             $(function(){
-                let nv = $("#munav");
-                nv.html(navbar);
+                // let nv = $("#munav");
+                // nv.html(navbar);
                 colors=[blue,red,white,yellow];
                 $(".color").click(function(){
                     var colorid=$(this).attr("id");
@@ -65,16 +65,16 @@
         </style>
     </head>
     <body>
-        <div id="munav">
+        <!-- <div id="munav">
 
-        </div>
+        </div> -->
         <div class="row pt-5">
             
         </div>
         <div class="container">
             <div class="row text-center h3">
                 <div class="col " id="highestColor">
-                    最多的顏色:
+                    <h1>最多的顏色:</h1>
                 </div>
             </div>
             <div class="row text-center">
