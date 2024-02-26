@@ -1,5 +1,6 @@
-# Drum kit 
+# Drum kit 個人筆記紀錄用
 
+######
 只要是透過JS的event監聽HTML的標籤屬性，並做出相對應的變化
 ---
 ### html架構
@@ -39,3 +40,7 @@ function removeTransition(e){
 keys.forEach(key => key.addEventListen('transitionend',removeTransition));
 ```
 - 抓取所有 `.key` 元素， 並加上 `transitionend`事件監聽，透過 `removeTransition` 來判定取消按鍵的特效
+
+---
+# 參考資料/資源
+- [JavaScript30](https://javascript30.com/)

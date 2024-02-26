@@ -1,4 +1,6 @@
-# CSS Variables and JS
+# CSS Variables and JS 個人筆記紀錄用
+
+######
 運用CSS變數與JS直接修改網頁屬性
 ---
 
@@ -67,3 +69,7 @@ inputs.forEach(input => input.addEventListener('input', handleUpdate));
 - 對每個input 加上 input事件監聽 更動時抓取當下 `this` 的 `dataset.sizing` 、 name 、 value 的值 。
 - 原作者是用mousemove、change 來做即時觸發，不過在input元素中，針對即時觸發input感覺比較合適。 參考 [ref](https://www.w3schools.com/jsref/event_oninput.asp)
 - 更改 `document.documentElement` 的style等於更改CSS裡的:root
+
+---
+# 參考資料/資源
+- [JavaScript30](https://javascript30.com/)

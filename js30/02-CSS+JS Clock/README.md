@@ -1,5 +1,6 @@
-# CSS + JS Clock 
+# CSS + JS Clock 個人筆記紀錄用
 
+######
 利用CSS和JS刻出一個簡單的時鐘特效
 ---
 ### CSS
@@ -33,5 +34,9 @@
     - 12h => 360deg
     - 1h => 360/12 = 30deg
     - 1min => 360/12/60=0.5deg
+
+---
+# 參考資料/資源
+- [JavaScript30](https://javascript30.com/)
 
 
