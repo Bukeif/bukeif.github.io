@@ -1,5 +1,5 @@
 var navbar=`
-<nav class="navbar navbar-expand-sm nav-bg-custom-1 nav-text-custom-1">
+<nav class="navbar navbar-expand-lg nav-bg-custom-1 nav-text-custom-1">
 <div class="container-fluid">
   <a class="navbar-brand nav-home-text fw-bold" href="index.html">V</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
