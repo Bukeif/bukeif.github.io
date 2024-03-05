@@ -52,8 +52,6 @@ const people = ['Beck, Glenn', 'Becker, Carl',
 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 7. sort Exercise：Sort the people alphabetically by last name
 8. Reduce Exercise：Sum up the instances of each of these
-
-8. 統計出每個物品重複的數量
 ---
 ## 一個蠻酷的功能
 - 我們平時都 `console.log` 都是這樣

@@ -56,4 +56,18 @@ transition: 屬性 轉換時間 延遲執行時間 速度;
 ##### translate(): CSS 函式
 - 水平和垂直方向重新定位元素。
 
+### 個人喜愛添加
+```javascript
+function toggleOpen() {
+    const isOpen = this.classList.contains('open');
+    panels.forEach(panel => panel.classList.remove('open'));
+    if (!isOpen){
+        this.classList.toggle('open');
+    }
+}
+```
+- 透過 `contains` 檢查classList內是否有 `'open'` 。
+- `contains` 會返回一個布林值，有包含就返回 `true` ，否則就 `false` 。
+- 只要先檢查目標對象是否有 `open` class name，在觸發一律remove所有的open，一開始檢查的class不是true的話執行添加 open class。
+- 這樣就會有獨立的開關控制。
 
