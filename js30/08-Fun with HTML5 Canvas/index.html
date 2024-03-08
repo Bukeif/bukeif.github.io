@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/nav.css" rel="stylesheet">
+        <script src="../js/nav.js"></script>
+        <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+
+        <title>Fun with HTML5 Canvas</title>
+        <link rel="icon" href="https://fav.farm/🐬" />
+        <script>
+                
+            document.addEventListener('DOMContentLoaded', function() {
+                    let nv = $("#header");
+                    nv.html(nav);
+                    const dropMenu = 
+                        document.querySelectorAll(".dropdown__menu");
+                    const dropSubMenu = 
+                        document.querySelectorAll(".dropdown__subMenu");
+                        
+                    dropMenu.forEach((menu) => {
+                        const menuRect = menu.getBoundingClientRect();
+                        if (menuRect.right > window.innerWidth)
+                        menu.style.right = 0;
+                    });
+                    dropSubMenu.forEach((subMenu) => {
+                        const subMenuRect = subMenu.getBoundingClientRect();
+                        if (subMenuRect.right > window.innerWidth)
+                        subMenu.style.left = `${-subMenuRect.width - 16}px`;
+                    });
+                });
+            
+        </script>
+        <style>
+           .sbody{
+            margin:0;
+           }
+        </style>
+    </head>
+    <body>
+        <header class="header" id="header">
+        </header>
+        <div class="sbody">
+            <canvas id="draw" width="800" height="800"></canvas>
+        </div>
+        <script>
+            // let ct = "hello world";
+            // console.log(ct[1])
+            // let rct =[] ;
+            // for(i=0;i<=ct.length;i++){
+            //     let sum = 0 + i;
+            //     let ctl = ct.length - i;
+            //     rct.push(ct[ctl]) ;
+            //     console.log(rct.join(''));
+            // }
+            const canvas = document.querySelector('#draw');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            ctx.strokeStyle = '#DD6FFF';
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.lineWidth = 100;
+            // ctx.globalCompositeOperation = 'multiply';
+            //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation#examples
+
+
+            
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+            let hue = 0;
+            let direction = true
+
+            function draw(e){
+                if(!isDrawing) return; //stop th fn from running when they are not moused down
+
+                console.log(e);
+                ctx.strokeStyle = `hsl(${hue},100%, 50%)`;
+
+                ctx.beginPath();
+                //start from
+                ctx.moveTo(lastX, lastY);
+                //go to 
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+                hue += 0.2;
+                if(hue >= 360){
+                    hue = 0;
+                }
+                if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1){
+                    direction = !direction;
+                }
+
+                if(direction){
+                    ctx.lineWidth += 0.2;
+                }else{
+                    ctx.lineWidth -= 0.2;
+                }
+            }
+            canvas.addEventListener('mousedown', (e) => {
+                isDrawing = true;
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            });
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mouseout', () => isDrawing = false);
+        </script>
+    </body>
+</html>

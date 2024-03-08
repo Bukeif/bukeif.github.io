@@ -37,6 +37,9 @@ let nav = `
                                     <a class="item__link" href="../07-Array Cardio Day 2/index.html">Array Cardio Day 2</a>
                                 </li>
                                 <li class="menu__item">
+                                    <a class="item__link" href="../08-Fun with HTML5 Canvas/index.html">Fun with HTML5 Canvas</a>
+                                </li>
+                                <li class="menu__item">
                                     <a class="item__link">5</a>
                                 </li>
                             </ul>
