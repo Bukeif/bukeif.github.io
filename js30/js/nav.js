@@ -13,31 +13,34 @@ let nav = `
                     <!-- dropdown menu -->
                     <ul class="dropdown__menu">
                         <li class="menu__item">
-                            <a class="item__link" href="../01-JSDrumkit/index.html">JavaScript Drum kit</a>
+                            <a class="item__link" href="../01-JSDrumkit/index.html">01-JavaScript Drum kit</a>
                         </li>
                         <li class="menu__item">
-                            <a class="item__link" href="../02-CSS+JS Clock/index.html">CSS+JS Clock</a>
+                            <a class="item__link" href="../02-CSS+JS Clock/index.html">02-CSS+JS Clock</a>
                         </li>
                         <li class="menu__item">
-                            <a class="item__link" href="../03-css variables and js/index.html">css variables and js</a>
+                            <a class="item__link" href="../03-css variables and js/index.html">03-css variables and js</a>
                         </li>
                         <li class="menu__item">
-                            <a class="item__link" href="../04-Array Cardio/index.html">Array Cardio</a>
+                            <a class="item__link" href="../04-Array Cardio/index.html">04-Array Cardio</a>
                         </li>
                         <li class="menu__item">
-                            <a class="item__link" href="../05-Flex Panels Gallery/index.html">Flex Panels Gallery</a>
+                            <a class="item__link" href="../05-Flex Panels Gallery/index.html">05-Flex Panels Gallery</a>
                         </li>
                         <li class="menu__item dropdown__subItem">
                             <a class="item__link">06~10</a>
                             <ul class="dropdown__subMenu">
                                 <li class="menu__item">
-                                    <a class="item__link" href="../06-Type Ahead/index.html">Type Ahead</a>
+                                    <a class="item__link" href="../06-Type Ahead/index.html">06-Type Ahead</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a class="item__link" href="../07-Array Cardio Day 2/index.html">Array Cardio Day 2</a>
+                                    <a class="item__link" href="../07-Array Cardio Day 2/index.html">07-Array Cardio Day 2</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a class="item__link" href="../08-Fun with HTML5 Canvas/index.html">Fun with HTML5 Canvas</a>
+                                    <a class="item__link" href="../08-Fun with HTML5 Canvas/index.html">08-Fun with HTML5 Canvas</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="item__link" href="../09-Dev Tools Domination/index.html">09-Dev Tools Domination</a>
                                 </li>
                                 <li class="menu__item">
                                     <a class="item__link">5</a>
