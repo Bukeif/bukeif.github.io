@@ -11,28 +11,30 @@
 
         <title>09-Dev Tools Domination</title>
         <script>
-                            function redropdownMenu(){
-                const dropMenu = 
-                document.querySelectorAll(".dropdown--menu");
-                const dropSubMenu = 
-                    document.querySelectorAll(".dropdown--submenu");
-                    
-                dropMenu.forEach((menu) => {
-                    const menuRect = menu.getBoundingClientRect();
-                    if (menuRect.right > window.innerWidth)
-                    menu.style.right = 0;
-                });
-                dropSubMenu.forEach((subMenu) => {
-                    const subMenuRect = subMenu.getBoundingClientRect();
-                    if (subMenuRect.right > window.innerWidth)
-                    subMenu.style.left = `${-subMenuRect.width}px`;
-                });
-            }
-            window.addEventListener('resize', () =>{
+                document.addEventListener('DOMContentLoaded', () => {
                 redropdownMenu();
-            })
-            document.addEventListener('DOMContentLoaded', () => {
-                redropdownMenu();
+                function redropdownMenu(){
+                    const dropMenu = 
+                    document.querySelectorAll(".dropdown--menu");
+                    const dropSubMenu = 
+                        document.querySelectorAll(".dropdown--submenu");
+                        
+                    dropMenu.forEach((menu) => {
+                        const menuRect = menu.getBoundingClientRect();
+                        if (menuRect.right > window.innerWidth)
+                        menu.style.right = 0;
+                    });
+                    dropSubMenu.forEach((subMenu) => {
+                        const subMenuRect = subMenu.getBoundingClientRect();
+                        if (subMenuRect.right > window.innerWidth)
+                        subMenu.style.left = `${-subMenuRect.width}px`;
+                        console.log(subMenu)
+
+                    });
+                }
+                window.addEventListener('resize', () =>{
+                    redropdownMenu();
+                })
             });
             
         </script>
