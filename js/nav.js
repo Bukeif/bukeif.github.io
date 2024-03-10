@@ -16,16 +16,13 @@ var navbar=`
           <li><a class="dropdown-item" href="./BD/color1.html">黑沙</a></li>
         </ul>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" herf="hello.html">HW</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">CSS PracticeArea</a>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="./can1.html">canvas snowflake practice</a></li>
           <li><a class="dropdown-item" href="./can2.html">particle-noMouse</a></li>
           <li><a class="dropdown-item" href="./can3.html">particle-forMouse</a></li>
-          <li><a class="dropdown-item" href="./js30/Home/index.html">dropdownMenu practice</a></li>
+          <li><a class="dropdown-item" href="./dropdown_menu.html">自製RWD Navbar練習</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -48,10 +45,11 @@ var navbar=`
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">JS</a>
         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="./js30/Home/index.html">JS30</a></li>
           <li><a class="dropdown-item" href="./test1.html">object ot array</a></li>
           <li><a class="dropdown-item" href="./test2.html">prototype</a></li>
           <li><a class="dropdown-item" href="./test3.html">class</a></li>
-        </ul>
+          </ul>
       </li>
     </ul>
   </div>

@@ -4,31 +4,14 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/nav.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
         <script src="../js/nav.js"></script>
         <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <link rel="icon" href="https://fav.farm/🐬" />
 
         <title>09-Dev Tools Domination</title>
         <script>
                 
-            document.addEventListener('DOMContentLoaded', function() {
-                    let nv = $("#header");
-                    nv.html(nav);
-                    const dropMenu = 
-                        document.querySelectorAll(".dropdown__menu");
-                    const dropSubMenu = 
-                        document.querySelectorAll(".dropdown__subMenu");
-                        
-                    dropMenu.forEach((menu) => {
-                        const menuRect = menu.getBoundingClientRect();
-                        if (menuRect.right > window.innerWidth)
-                        menu.style.right = 0;
-                    });
-                    dropSubMenu.forEach((subMenu) => {
-                        const subMenuRect = subMenu.getBoundingClientRect();
-                        if (subMenuRect.right > window.innerWidth)
-                        subMenu.style.left = `${-subMenuRect.width - 16}px`;
-                    });
-                });
             
         </script>
         <style>
@@ -37,8 +20,103 @@
     </head>
     <body>
         <header class="header" id="header">
-            
-            
         </header>
+        <script>
+            let nv = $("#header");
+            nv.html(nav);
+        </script>
+        <!-- Main js -->
+        <script src="../js/main.js"></script>
+
+        <div class="sbody">
+             <p onclick="makeGreen()">xBREAKxDOWNx</p>
+        </div>
+        <script>
+
+            const dogs = [
+                {name: 'Snickers',age: 2},
+                {name: 'hugo', age: 8}
+            ];
+            function makeGreen(){
+                const p = document.querySelector('p');
+                p.style.color = '#BAda55';
+                p.style.fontSize = '50px';
+            }
+            
+            //Regulan
+            console.log('hello');
+
+            //Interpolated
+            console.log('Hello I am a %s %s string!', '💩','🐬')
+            // Styled
+            // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue');
+            
+            // warning!
+            console.warn('OH NOOO');
+            
+            //error :/
+            console.error('Shit!');
+            
+            //info
+            console.info('Crocodiles eat 3-4 peple per year');
+            
+            // Testing
+            const p = document.querySelector('p');
+
+            // console.assert(p.classList.contains('ouch') ,'That is wrong!');
+
+            // clearing
+            console.clear();
+
+            // Viewing DOM Elements
+            console.log(p);
+            console.dir(p);
+
+            console.clear();
+
+            // Grouping together
+            dogs.forEach(dog => {
+                console.group(`${dog.name}`);
+                console.log(`This is ${dog.name}`);
+                console.log(`${dog.name} is ${dog.age} years old`);
+                console.log(`${dog.name} is ${dog.age * 7} dog old`);
+                console.groupEnd(`${dog.name}`);
+            })
+            // counting
+
+            console.count('Wes');
+            console.count('Wes');
+            console.count('Steve');
+            console.count('Steve');
+            console.count('Wes');
+            console.count('Wes');
+            console.count('Steve');
+            console.count('Steve');
+            console.count('Steve');
+            console.count('Steve');
+            function greet(name) {
+                console.count('greet() 被調用的次數');
+                return 'Hello, ' + name;
+            }
+
+            greet('Alice');
+            greet('Bob');
+            greet('Alice');
+
+            // timing
+            // const start = performance.now();
+            timea = console.time('fetching data');
+            fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+                // const end = performance.now();
+                // const elapsedtime = end - start;
+                // console.log('elapsed time:' ,elapsedtime)
+                console.timeEnd('fetching data');
+                console.log(data);
+            })
+
+            console.table(dogs);
+        </script>
     </body>
 </html>

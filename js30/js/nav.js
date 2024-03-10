@@ -1,114 +1,147 @@
 let nav = `
-<h1 class="logo"><a href="../../index.html">LOGO</a></h1>
+<nav class="nav container">
+                    <div class="nav__data">
+                        <a href="../../index.html" class="nav__logo">
+                            <i class="ri-bug-line"></i>JS30
+                        </a>    
+                        <div class="nav__toggle" id="nav--toggle">
+                            <i class="ri-menu-line nav__burger"></i>
+                            <i class="ri-close-line nav__close"></i>
+                        </div>
+                    </div>
 
-<ul class="menu">
-                <!--- item1 -->
-                <li class="menu__item">
-                    <a class="item__link" href="../Home/index.html">Home</a>
-                </li>
-    
-                <!--- item 2 --->
-                <li class="menu__item dropdown__item">
-                    <a class="item__link">js30(1~10)</a>
-                    <!-- dropdown menu -->
-                    <ul class="dropdown__menu">
-                        <li class="menu__item">
-                            <a class="item__link" href="../01-JSDrumkit/index.html">01-JavaScript Drum kit</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="item__link" href="../02-CSS+JS Clock/index.html">02-CSS+JS Clock</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="item__link" href="../03-css variables and js/index.html">03-css variables and js</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="item__link" href="../04-Array Cardio/index.html">04-Array Cardio</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="item__link" href="../05-Flex Panels Gallery/index.html">05-Flex Panels Gallery</a>
-                        </li>
-                        <li class="menu__item dropdown__subItem">
-                            <a class="item__link">06~10</a>
-                            <ul class="dropdown__subMenu">
-                                <li class="menu__item">
-                                    <a class="item__link" href="../06-Type Ahead/index.html">06-Type Ahead</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="item__link" href="../07-Array Cardio Day 2/index.html">07-Array Cardio Day 2</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="item__link" href="../08-Fun with HTML5 Canvas/index.html">08-Fun with HTML5 Canvas</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="item__link" href="../09-Dev Tools Domination/index.html">09-Dev Tools Domination</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="item__link">5</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-    
-                <!-- item 3 -->
-                <li class="menu__item">
-                    <a class="item__link">
-                         Products
-                    </a>
-                </li>
-    
-                <!--- item 4 --->
-                <li class="menu__item dropdown__item">
-                    <a class="item__link">Analytics</a>
-                    <!-- dropdown menu -->
-                    <ul class="dropdown__menu">
-                        <li class="menu__item">
-                            <a class="item__link">Overview</a>
-                        </li>
-                        <li class="menu__item dropdown__subItem">
-                            <a class="item__link">Transactions</a>
-                            <ul class="dropdown__subMenu">
-                                <li class="menu__item">
-                                    <a class="item__link">Documents</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu__item dropdown__subItem">
-                            <a class="item__link">Reports</a>
-                            <ul class="dropdown__subMenu">
-                                <li class="menu__item">
-                                    <a class="item__link">Payments</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-    
-                <!--- item 5 --->
-                <li class="menu__item dropdown__item">
-                    <a class="item__link">Users</a>
-                    <!-- dropdown menu -->
-                    <ul class="dropdown__menu">
-                        <li class="menu__item">
-                            <a class="item__link">Profiles</a>
-                        </li>
-                        <li class="menu__item dropdown__subItem">
-                            <a class="item__link">Accounts</a>
-                            <ul class="dropdown__subMenu">
-                                <li class="menu__item">
-                                    <a class="item__link">Business</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu__item dropdown__subItem">
-                            <a class="item__link">Messages</a>
-                            <ul class="dropdown__subMenu">
-                                <li class="menu__item">
-                                    <a class="item__link">Individual</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                    <!-- Nav Menu -->
+                    <div class="nav__menu" id="nav__menu">
+                        <ul class="nav__list">
+                            <li><a href="../Home/index.html" class="nav__link">Home</a></li>
+                            
+                            <li><a href="#" class="nav__link">Company</a></li>
+                            
+                            <!-- DROPDOWN 1-->
+                            <li class="dropdown__item">
+                                <div class="nav__link">
+                                    js30(1~10) <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
+                                </div>
+
+                                <ul class="dropdown--menu">
+                                    <li>
+                                        <a href="../01-JSDrumkit/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 01-JavaScript Drum kit
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../02-CSS+JS Clock/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 02-CSS+JS Clock
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../03-css variables and js" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 03-css variables and js
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../04-Array Cardio/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 04-Array Cardio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../05-Flex Panels Gallery/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 05-Flex Panels Gallery
+                                        </a>
+                                    </li>
+
+                                    <!-- DROPDOWN SUBMENU -->
+                                    <li class="dropdown--subitem">
+                                        <div class="dropdown__link">
+                                            <i class="ri-bar-chart-line"></i> 6 ~ 10
+                                            <i class="ri-add-line dropdown__add"></i>
+                                        </div>
+
+                                        <ul class="dropdown--submenu">
+                                            <li>
+                                                <a href="../06-Type Ahead/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 06-Type Ahead
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../07-Array Cardio Day 2/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 07-Array Cardio Day 2
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../08-Fun with HTML5 Canvas/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 08-Fun with HTML5 Canvas
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../09-Dev Tools Domination/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 09-Dev Tools Domination
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="../10-Hold Shift to Check Multiple Checkboxes/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 10-Hold Shift to Check Multiple Checkboxes
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li><a href="#" class="nav__link">Products</a></li>
+                            
+                             <!-- DROPDOWN 2-->
+                             <li class="dropdown__item">
+                                <div class="nav__link">
+                                    Users <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
+                                </div>
+
+                                <ul class="dropdown--menu">
+                                    <li>
+                                        <a href="#" class="dropdown__link">
+                                            <i class="ri-user-line"></i> Profils
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="dropdown__link">
+                                            <i class="ri-lock-line"></i> Accounts
+                                        </a>
+                                    </li>
+                                    
+                                    <!-- DROPDOWN SUBMENU -->
+                                    <li class="dropdown--subitem">
+                                        <div class="dropdown__link">
+                                            <i class="ri-bar-chart-line"></i> Reports
+                                            <i class="ri-add-line dropdown__add"></i>
+                                        </div>
+
+                                        <ul class="dropdown--submenu">
+                                            <li>
+                                                <a href="#" class="dropdown__sublink">
+                                                    <i class="ri-file-list-line"></i> Document
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="dropdown__sublink">
+                                                    <i class="ri-cash-line"></i> Payments
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="dropdown__sublink">
+                                                    <i class="ri-refund-2-line"></i> Refunds
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="#" class="nav__link">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
 `;

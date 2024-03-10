@@ -2,34 +2,16 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/nav.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
     <script src="../js/nav.js"></script>
     <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <link rel="icon" href="https://fav.farm/🐬" />
 
     <title>04-Array Cardio</title>
     <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            let nv = $("#header");
-            nv.html(nav);
-            const dropMenu =
-                document.querySelectorAll(".dropdown__menu");
-            const dropSubMenu =
-                document.querySelectorAll(".dropdown__subMenu");
-
-            dropMenu.forEach((menu) => {
-                const menuRect = menu.getBoundingClientRect();
-                if (menuRect.right > window.innerWidth)
-                    menu.style.right = 0;
-            });
-            dropSubMenu.forEach((subMenu) => {
-                const subMenuRect = subMenu.getBoundingClientRect();
-                if (subMenuRect.right > window.innerWidth)
-                    subMenu.style.left = `${-subMenuRect.width - 16}px`;
-            });
-        });
 
     </script>
     <style>
@@ -43,9 +25,14 @@
 
 <body>
     <header class="header" id="header">
-
-
     </header>
+    <script>
+        let nv = $("#header");
+        nv.html(nav);
+    </script>
+    <!-- Main js -->
+    <script src="../js/main.js"></script>
+
     <div class="sbody">
         <p><em>Psst: have a look at the JavaScript Console</em> 👉</p>
 
