@@ -28,7 +28,6 @@
                         const subMenuRect = subMenu.getBoundingClientRect();
                         if (subMenuRect.right > window.innerWidth)
                         subMenu.style.left = `${-subMenuRect.width}px`;
-                        console.log(subMenu)
 
                     });
                 }
@@ -46,10 +45,10 @@
             }
 
             img {
-                width: 100%;
                 padding: var(--spacing);
                 background: var(--base);
                 filter: blur(var(--blur));
+
             }
 
             .h1{

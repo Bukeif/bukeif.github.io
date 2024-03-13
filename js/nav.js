@@ -22,7 +22,7 @@ var navbar=`
           <li><a class="dropdown-item" href="./can1.html">canvas snowflake practice</a></li>
           <li><a class="dropdown-item" href="./can2.html">particle-noMouse</a></li>
           <li><a class="dropdown-item" href="./can3.html">particle-forMouse</a></li>
-          <li><a class="dropdown-item" href="./dropdown_menu.html">自製RWD Navbar練習</a></li>
+          <li><a class="dropdown-item" href="./dropdown_menu.html">RWD Navbar練習</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">

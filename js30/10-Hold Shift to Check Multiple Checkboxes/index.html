@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/nav.css" rel="stylesheet">
+        <!-- <link href="./style.css" rel="stylesheet"> -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
         <script src="../js/nav.js"></script>
         <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
@@ -11,35 +12,29 @@
 
         <title>10-Hold Shift to Check Multiple Checkboxes</title>
         <script>
-            
-
-            
+            function redropdownMenu(){
+                const dropMenu = 
+                document.querySelectorAll(".dropdown--menu");
+                const dropSubMenu = 
+                    document.querySelectorAll(".dropdown--submenu");
+                    
+                dropMenu.forEach((menu) => {
+                    const menuRect = menu.getBoundingClientRect();
+                    if (menuRect.right > window.innerWidth)
+                    menu.style.right = 0;
+                });
+                dropSubMenu.forEach((subMenu) => {
+                    const subMenuRect = subMenu.getBoundingClientRect();
+                    if (subMenuRect.right > window.innerWidth)
+                    subMenu.style.left = `${-subMenuRect.width}px`;
+                });
+            }
+            window.addEventListener('resize', () =>{
+                redropdownMenu();
+            })
             document.addEventListener('DOMContentLoaded', () => {
                 redropdownMenu();
-                function redropdownMenu(){
-                    const dropMenu = 
-                    document.querySelectorAll(".dropdown--menu");
-                    const dropSubMenu = 
-                        document.querySelectorAll(".dropdown--submenu");
-                        
-                    dropMenu.forEach((menu) => {
-                        const menuRect = menu.getBoundingClientRect();
-                        if (menuRect.right > window.innerWidth)
-                        menu.style.right = 0;
-                    });
-                    dropSubMenu.forEach((subMenu) => {
-                        const subMenuRect = subMenu.getBoundingClientRect();
-                        if (subMenuRect.right > window.innerWidth)
-                        subMenu.style.left = `${-subMenuRect.width}px`;
-                        console.log(subMenu)
-
-                    });
-                }
-                window.addEventListener('resize', () =>{
-                    redropdownMenu();
-                })
             });
-            
         </script>
         <style>
             

@@ -28,7 +28,6 @@
                         const subMenuRect = subMenu.getBoundingClientRect();
                         if (subMenuRect.right > window.innerWidth)
                         subMenu.style.left = `${-subMenuRect.width}px`;
-                        console.log(subMenu)
 
                     });
                 }
@@ -38,7 +37,7 @@
             });
         </script>
         <style>
-           .sbody {
+           html {
             box-sizing: border-box;
             background: #ffc600;
             font-family: 'helvetica neue';
@@ -46,7 +45,7 @@
             font-weight: 200;
            }
 
-           .sbody {
+           body {
             margin:0;
            }
 
