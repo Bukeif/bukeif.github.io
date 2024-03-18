@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/nav.css" rel="stylesheet">
+        <!-- <link href="./style.css" rel="stylesheet"> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
+        <script src="../js/nav.js"></script>
+        <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <link rel="icon" href="https://fav.farm/🐬" />
+
+        <title>10-Hold Shift to Check Multiple Checkboxes</title>
+        <script>
+            function redropdownMenu(){
+                const dropMenu = 
+                document.querySelectorAll(".dropdown--menu");
+                const dropSubMenu = 
+                    document.querySelectorAll(".dropdown--submenu");
+                    
+                dropMenu.forEach((menu) => {
+                    const menuRect = menu.getBoundingClientRect();
+                    if (menuRect.right > window.innerWidth)
+                    menu.style.right = 0;
+                });
+                dropSubMenu.forEach((subMenu) => {
+                    const subMenuRect = subMenu.getBoundingClientRect();
+                    if (subMenuRect.right > window.innerWidth)
+                    subMenu.style.left = `${-subMenuRect.width}px`;
+                });
+            }
+            window.addEventListener('resize', () =>{
+                redropdownMenu();
+            })
+            document.addEventListener('DOMContentLoaded', () => {
+                redropdownMenu();
+            });
+        </script>
+        <style>
+            
+            html {
+                font-family: sans-serif;
+            }
+
+            .inbox {
+                max-width: 400px;
+                margin: 50px auto;
+                background: white;
+                border-radius: 5px;
+                box-shadow: 10px 10px 0 rgb(0, 0, 0, 0.1);
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #f1f1f1;
+            }
+
+            .item:last-child{
+                border-bottom: 0;
+            }
+
+            input:checked + p {
+                background: #F9F9F9;
+                text-decoration: line-through;
+            }
+
+            input[type="checkbox"]{
+                margin: 20px;
+            }
+
+            p{
+                margin: 0;
+                padding: 20px;
+                transition: background 0.2s;
+                flex: 1;
+                font-size: 20px;
+                font-weight: 200;
+                border-left: 1px solid #D1E2FF;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <header class="header" id="header">
+        </header>
+        <script>
+            let nv = $("#header");
+            nv.html(nav);
+        </script>
+        <!-- Main js -->
+        <script src="../js/main.js"></script>
+
+        <div class="sbody">
+            <div class="inbox">
+                <div class="item">
+                    <input type="checkbox">
+                    <p>This is an inbox layout.</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Check one item</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Hold down your Shift key</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Check a lower item</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Everything inbetween should also be set to checked</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Try do it with out any libraries</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Just regular JavaScript</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Good Luck!</p>
+                </div>
+                <div class="item">
+                    <input type="checkbox">
+                    <p>Don't forget to tweet your result!</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+            
+            let lastChecked;
+
+            let click; //單純點幾
+            let selectClick; // 按下shift後的選取
+            let cancelClick; //按下shift後的取消
+            const handleCheck = function (e) {
+                if (e.shiftKey && this.checked){
+                    selectClick = this;
+                    selectBox();
+                } else if (e.shiftKey && !this.checked) {
+                    cancelClick = this;
+                    cancelBox();
+                } else if (this.checked) {
+                    click = this;
+                    selectClick = undefined;
+                    cancelClick = undefined;
+                } else {
+                    click = undefined;
+                    selectClick = undefined;
+                    cancelClick = undefined;
+                }
+
+                // 選取功能
+                function selectBox(){
+                    let inBetween = false;
+                    checkboxes.forEach(checkbox => {
+                        console.log(checkbox)
+                        // 將選取範圍內的checkbox加上標記
+                        if (checkbox === selectClick || checkbox === click){
+                            inBetween = !inBetween;
+                            console.log("inBetween: ",inBetween)
+
+                        }
+                        // 將有標記的checkbox勾選 ( 且 click 不為underfined 與 selectClick 是為了避免點自己全選)
+                        if (inBetween && click !== undefined && click !== selectClick) {
+                            checkbox.checked = true;
+                        }
+                    })
+                }
+
+                // 取消選取
+                function cancelBox(){
+                    let inBetween = false;
+                    checkboxes.forEach(checkbox => {
+                        console.log(checkbox)
+                        // 將選取範圍內的checkbox加上標記
+                        if (checkbox === selectClick || checkbox === cancelClick) {
+                            inBetween = !inBetween;
+                            console.log("inBetween: ",inBetween)
+                        }
+                        // 將有標記的checkbox勾選(以及selectClick)
+                        //一路取消後續的勾選，因此也不用返回上一個if 做inBetween反轉
+                        if (inBetween || checkbox === selectClick) {
+                            checkbox.checked = false;
+                        }
+                    })
+                }
+            }
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', handleCheck)});
+            window.addEventListener('keyup', (e) => {
+                if (e.keyCode === 16 || e.shiftKey) {
+                    click = undefined;
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -14,9 +14,7 @@ let nav = `
                     <div class="nav__menu" id="nav__menu">
                         <ul class="nav__list">
                             <li><a href="../Home/index.html" class="nav__link">Home</a></li>
-                            
-                            <li><a href="#" class="nav__link">Company</a></li>
-                            
+                                                        
                             <!-- DROPDOWN 1-->
                             <li class="dropdown__item">
                                 <div class="nav__link">
@@ -83,6 +81,38 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 10-Hold Shift to Check Multiple Checkboxes
                                                 </a>
                                             </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- DROPDOWN 1-->
+                            <li class="dropdown__item">
+                                <div class="nav__link">
+                                    js30(1~10) <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
+                                </div>
+
+                                <ul class="dropdown--menu">
+                                    <li>
+                                        <a href="../11-Custom Video Player/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 11-Custom Video Player
+                                        </a>
+                                    </li>
+                                    
+
+                                    <!-- DROPDOWN SUBMENU -->
+                                    <li class="dropdown--subitem">
+                                        <div class="dropdown__link">
+                                            <i class="ri-bar-chart-line"></i> 16 ~ 20
+                                            <i class="ri-add-line dropdown__add"></i>
+                                        </div>
+
+                                        <ul class="dropdown--submenu">
+                                            <li>
+                                                <a href="#" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 16-
+                                                </a>
+                                            </li>
+                                            
                                         </ul>
                                     </li>
                                 </ul>
