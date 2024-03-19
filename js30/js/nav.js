@@ -88,13 +88,23 @@ let nav = `
                             <!-- DROPDOWN 1-->
                             <li class="dropdown__item">
                                 <div class="nav__link">
-                                    js30(1~10) <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
+                                    js30(11~20) <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
                                 </div>
 
                                 <ul class="dropdown--menu">
                                     <li>
                                         <a href="../11-Custom Video Player/index.html" class="dropdown__link">
                                             <i class="ri-javascript-line"></i> 11-Custom Video Player
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../12-Key Squence Detection/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 12-Key Squence Detection
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../13-Slide In on Scroll/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 13-Slide In on Scroll
                                         </a>
                                     </li>
                                     
