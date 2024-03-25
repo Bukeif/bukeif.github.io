@@ -179,3 +179,4 @@ function Person(name, age){
 let person1 = new Person('theweb',18);//作為構造函數使用
 Person('Shan',20);// 做為普通函數使用
 window.sayName();//"Shan" 添加到window中 實際效果於test2.html
+
