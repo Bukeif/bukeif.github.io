@@ -50,7 +50,7 @@ function shadow(e) {
 hero.addEventListener('mousemove', shadow);
 ```
 
-![alt text](image.png)
+![alt text](https://4.bp.blogspot.com/-43hC8ABtThw/WHwwHK8svZI/AAAAAAAAxnU/fGmmc9mSIcwJMR-JZGMnTH_QNM_eREwuQCLcB/s1600/1.png)
 ```javascript
 let obj = {
   website: "pjchender",
