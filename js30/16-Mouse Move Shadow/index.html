@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/nav.css" rel="stylesheet">
+        <!-- <link href="./style.css" rel="stylesheet"> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
+        <script src="../js/nav.js"></script>
+        <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <link rel="icon" href="https://fav.farm/🐬" />
+
+        <title>16-Mouse Move Shadow</title>
+        <script>
+            function redropdownMenu(){
+                const dropMenu = 
+                document.querySelectorAll(".dropdown--menu");
+                const dropSubMenu = 
+                    document.querySelectorAll(".dropdown--submenu");
+                    
+                dropMenu.forEach((menu) => {
+                    const menuRect = menu.getBoundingClientRect();
+                    if (menuRect.right > window.innerWidth)
+                    menu.style.right = 0;
+                });
+                dropSubMenu.forEach((subMenu) => {
+                    const subMenuRect = subMenu.getBoundingClientRect();
+                    if (subMenuRect.right > window.innerWidth)
+                    subMenu.style.left = `${-subMenuRect.width}px`;
+                });
+            }
+            window.addEventListener('resize', () =>{
+                redropdownMenu();
+            })
+            document.addEventListener('DOMContentLoaded', () => {
+                redropdownMenu();
+            });
+        </script>
+        <style>
+            .sbody {
+                color: black;
+                font-family:  sans-serif;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: black;
+            }
+
+            h1 {
+                text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+                font-size: 100px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <header class="header" id="header">
+        </header>
+        <script>
+            let nv = $("#header");
+            nv.html(nav);
+        </script>
+        <!-- Main js -->
+        <script src="../js/main.js"></script>
+
+        <div class="sbody">
+            <div class="hero">
+                <h1>🔥WOAH!</h1>
+            </div>
+
+        </div>
+        <script>
+            const hero = document.querySelector('.hero');
+            const text = document.querySelector('h1');
+            const walk = 100; //100px
+
+            function shadow(e) {
+                // console.log(e.srcElement.offsetWidth, e.srcElement.offsetHeight);
+                // console.log(e.target.offsetLeft, e.target.offsetTop);
+                
+                const { offsetWidth: width, offsetHeight: height } = hero
+                let { offsetX: x, offsetY: y } = e;
+                // console.log('e.wh => ',width, height)
+                 
+                if (this !== e.target){
+                    x =  x + e.target.offsetLeft;
+                    y =  y + e.target.offsetTop;
+                }
+                // console.log('e.xy => ',x, y)
+
+                const xWalk = Math.round((x / width * walk) - (walk / 2));
+                const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+                text.style.textShadow = `
+                ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+                ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
+                ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),
+                ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)
+                `;
+
+            }
+
+            hero.addEventListener('mousemove', shadow);
+        </script>
+    </body>
+</html>
