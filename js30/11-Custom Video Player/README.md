@@ -1,4 +1,4 @@
-# Custom HTML5 Video Player
+# Custom HTML5 Video Player 個人筆記紀錄用
 ### 這次課程是自訂義影片，熟悉video中的物件
 
 ---

@@ -137,6 +137,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 17-Sort Without Articles
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../18-Adding Up Times with Reduce/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 18-Adding Up Times with Reduce
+                                                </a>
+                                            </li>
                                             
                                         </ul>
                                     </li>

@@ -50,7 +50,8 @@ function debounce(func, wait = 20, immediate = true) {
 }
 ```
 - function debouce: 為短時間大量觸發的事件處理，製造間隔時間。例如:事件函數每 250 ms 執行一次。
-
+[補充](https://www.mropengate.com/2017/12/dom-debounce-throttle.html)
+- [參考](https://hackmd.io/t5LFL4FYTCOzYK4CdMzCqw?view)
 ---
 
 ```javascript
