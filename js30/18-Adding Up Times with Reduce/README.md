@@ -1,4 +1,4 @@
-# 18-Adding Up Times with Reduce
+# 18-Adding Up Times with Reduce 個人筆記整理用
 
 這次課程是做統計網頁上的影片總時長。
 
