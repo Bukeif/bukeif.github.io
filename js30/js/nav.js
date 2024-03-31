@@ -147,6 +147,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 19-Webcam Fun
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../20-Speech Detection/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 20-Speech Detection
+                                                </a>
+                                            </li>
                                             
                                         </ul>
                                     </li>
