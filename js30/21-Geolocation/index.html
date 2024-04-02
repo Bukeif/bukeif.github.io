@@ -76,8 +76,12 @@
                 align-items: center;
             }
 
-            .units {
+            .speed .units {
                 font-size: 15px;
+            }
+
+            .units {
+                font-size: 20px;
             }
 
             /* Compass: https://thenounproject.com/search/?q=compass&i=592352 */
@@ -103,19 +107,32 @@
                 <span class="speed-value">0</span>
                 <span class="units">KM/H</span>
             </h1>
+            <h1 class="lat">
+                <span class="units">latitude : </span>
+                <span class="lat-value">0</span>
+            </h1>
+            <h1 class="lon">
+                <span class="units">Longitude :</span>
+                <span class="lon-value">0</span>
+            </h1>
+
+
 
             <script>
                 const arrow = document.querySelector('.arrow');
                 const speed = document.querySelector('.speed-value');
+                const lat = document.querySelector('.lat-value');
+                const lon = document.querySelector('.lon-value');
 
                 navigator.geolocation.watchPosition((data) => {
                     console.log(data);
                     speed.textContent = data.coords.speed;
+                    lat.textContent = data.coords.latitude.toFixed(6);
+                    lon.textContent = data.coords.longitude.toFixed(6);
                     arrow.style.transform = `rotate(${data.coords.heading}deg)`;
-                },(err) => {
-                    console.log(err);
-                    alert('HEY! YOU GOTTA ALLOW THAT TO HAPPEN!!!');
-                })
+                    }, (err) => {
+                    console.error(err);
+                });
 
             </script>
         </div>

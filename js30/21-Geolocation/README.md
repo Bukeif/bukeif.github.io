@@ -1,15 +1,25 @@
-cd "G:\VM_box"
-VBoxManage.exe modifyvm "Mac_OS14" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+# 21-Geolocation 個人筆記整理用
 
-VBoxManage setextradata "Mac_OS14" VBoxInternal/Devices/efi/0/Config/DmiSystemProduct “MacBookPro15,1”
+這次的課程做的比較簡單，使用 Navigator.geolocation 物件，獲取使用者的位置資訊
 
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-551B86E5744E2388"
+watchPosition() 以監控方式取得當前位置
 
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+accurency 目前位置的準確度
+heading 目前位置的指向
+latitude, longitude 經度 緯度
+speed 當前速度
 
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 
+<script>
+    const arrow = document.querySelector('.arrow');
+    const speed = document.querySelector('.speed-value');
 
-#如果是使用 AMD CPU 的電腦，請多加入下面這一行
+    navigator.geolocation.watchPosition((data) => {
+        console.log(data);
+        speed.textContent = data.coords.speed;
+        arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+        }, (err) => {
+        console.error(err);
+    });
 
-VBoxManage modifyvm "Mac_OS14" --cpu-profile "Intel Core i7-6700K"
+</script>
