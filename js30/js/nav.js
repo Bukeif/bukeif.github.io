@@ -158,57 +158,49 @@ let nav = `
                                 </ul>
                             </li>
 
-                            
-                            <li><a href="#" class="nav__link">Products</a></li>
-                            
-                             <!-- DROPDOWN 2-->
-                             <li class="dropdown__item">
+
+                            <!-- DROPDOWN 1-->
+                            <li class="dropdown__item">
                                 <div class="nav__link">
-                                    Users <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
+                                    js30(21~30) <i class="ri-arrow-drop-down-line dropdown__arrow"></i>
                                 </div>
 
                                 <ul class="dropdown--menu">
                                     <li>
-                                        <a href="#" class="dropdown__link">
-                                            <i class="ri-user-line"></i> Profils
+                                        <a href="../21-Geolocation/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 21-Geolocation
                                         </a>
                                     </li>
-
                                     <li>
-                                        <a href="#" class="dropdown__link">
-                                            <i class="ri-lock-line"></i> Accounts
+                                        <a href="../15-LoaclStorage/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 15-LoaclStorage
                                         </a>
                                     </li>
                                     
+
                                     <!-- DROPDOWN SUBMENU -->
                                     <li class="dropdown--subitem">
                                         <div class="dropdown__link">
-                                            <i class="ri-bar-chart-line"></i> Reports
+                                            <i class="ri-bar-chart-line"></i> 26 ~ 30
                                             <i class="ri-add-line dropdown__add"></i>
                                         </div>
 
                                         <ul class="dropdown--submenu">
                                             <li>
-                                                <a href="#" class="dropdown__sublink">
-                                                    <i class="ri-file-list-line"></i> Document
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown__sublink">
-                                                    <i class="ri-cash-line"></i> Payments
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="dropdown__sublink">
-                                                    <i class="ri-refund-2-line"></i> Refunds
+                                                <a href="../16-Mouse Move Shadow/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 16-Mouse Move Shadow
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
+
+
+                            
+                            <li><a href="#" class="nav__link">Products</a></li>
+                            
+                    
                             
                             <li><a href="#" class="nav__link">Contact</a></li>
                         </ul>
