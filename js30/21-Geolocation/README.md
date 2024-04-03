@@ -9,6 +9,7 @@ heading 目前位置的指向
 latitude, longitude 經度 緯度
 speed 當前速度
 
+知道資訊後就可以抽換HTML內的內容了
 
 <script>
     const arrow = document.querySelector('.arrow');

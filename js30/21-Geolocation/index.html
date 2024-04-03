@@ -116,6 +116,8 @@
                 <span class="lon-value">0</span>
             </h1>
 
+            <a id="maplink" href="#" target="_blank">🗺️</a>
+
 
 
             <script>
@@ -123,13 +125,20 @@
                 const speed = document.querySelector('.speed-value');
                 const lat = document.querySelector('.lat-value');
                 const lon = document.querySelector('.lon-value');
-
+                const map = document.querySelector('#maplink');
+                
                 navigator.geolocation.watchPosition((data) => {
                     console.log(data);
                     speed.textContent = data.coords.speed;
-                    lat.textContent = data.coords.latitude.toFixed(6);
-                    lon.textContent = data.coords.longitude.toFixed(6);
                     arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+                    
+
+                    const latdata = data.coords.latitude;
+                    const londata = data.coords.longitude;
+                    lat.textContent = latdata;
+                    lon.textContent = londata;
+                    let maplink = `https://www.google.com.tw/maps/@${latdata},${londata},16z?entry=ttu`;
+                    map.href = maplink;
                     }, (err) => {
                     console.error(err);
                 });

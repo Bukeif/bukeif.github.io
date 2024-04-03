@@ -1,15 +1,35 @@
-cd "G:\VM_box"
-VBoxManage.exe modifyvm "Mac_OS14" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
-
-VBoxManage setextradata "Mac_OS14" VBoxInternal/Devices/efi/0/Config/DmiSystemProduct “MacBookPro15,1”
-
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-551B86E5744E2388"
-
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
-
-VBoxManage setextradata "Mac_OS14" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
-
-
+VBoxManage.exe modifyvm "macOS" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+VBoxManage setextradata "macOS" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+VBoxManage setextradata "macOS" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata "macOS" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+VBoxManage modifyvm "macOS" --cpu-profile "Intel Core i7-6700K"
 #如果是使用 AMD CPU 的電腦，請多加入下面這一行
 
-VBoxManage modifyvm "Mac_OS14" --cpu-profile "Intel Core i7-6700K"
+
+
+VMware macos 位置
+C:\Users\az465\Documents\Virtual Machines\macOS 14
+SMBIOS
+board-id = "#"
+hw.model.reflectHost = "FALSE"
+hw.model = "iMacPro1,1"
+serialNumber.reflectHost = "FALSE"
+serialNumber = "#"
+smbios.reflectHost = "FALSE"
+efi.nvram.var.ROM.reflectHost = "FALSE"
+efi.nvram.var.MLB.reflectHost = "FALSE"
+efi.nvram.var.ROM = "#"
+efi.nvram.var.MLB = "#"
+
+AMD ONLY
+smc.version = "0"
+cpuid.0.eax = "0000:0000:0000:0000:0000:0000:0000:1011"
+cpuid.0.ebx = "0111:0101:0110:1110:0110:0101:0100:0111"
+cpuid.0.ecx = "0110:1100:0110:0101:0111:0100:0110:1110"
+cpuid.0.edx = "0100:1001:0110:0101:0110:1110:0110:1001"
+cpuid.1.eax = "0000:0000:0000:0001:0000:0110:0111:0001"
+cpuid.1.ebx = "0000:0010:0000:0001:0000:1000:0000:0000"
+cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
+cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
