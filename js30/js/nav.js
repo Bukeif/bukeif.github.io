@@ -172,11 +172,10 @@ let nav = `
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../15-LoaclStorage/index.html" class="dropdown__link">
-                                            <i class="ri-javascript-line"></i> 15-LoaclStorage
+                                        <a href="../22-Follow ALong Link Highlighter/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 22-Follow ALong Link Highlighter
                                         </a>
                                     </li>
-                                    
 
                                     <!-- DROPDOWN SUBMENU -->
                                     <li class="dropdown--subitem">
