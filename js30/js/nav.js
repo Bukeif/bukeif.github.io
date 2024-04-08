@@ -176,6 +176,11 @@ let nav = `
                                             <i class="ri-javascript-line"></i> 22-Follow ALong Link Highlighter
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="../23-Speech Synthesis/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 23-Speech Synthesis
+                                        </a>
+                                    </li>
 
                                     <!-- DROPDOWN SUBMENU -->
                                     <li class="dropdown--subitem">
