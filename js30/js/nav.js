@@ -181,6 +181,11 @@ let nav = `
                                             <i class="ri-javascript-line"></i> 23-Speech Synthesis
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="../24-Sticky Nav/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 24-Sticky Nav
+                                        </a>
+                                    </li>
 
                                     <!-- DROPDOWN SUBMENU -->
                                     <li class="dropdown--subitem">
