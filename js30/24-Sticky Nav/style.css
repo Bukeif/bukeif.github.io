@@ -51,9 +51,7 @@ h1 {
     z-index: 1;
 }
 
-.fixed-nav {
-    padding-top: 64px;
-}
+
 
 .fixed-nav .nav2 {
     position: fixed;

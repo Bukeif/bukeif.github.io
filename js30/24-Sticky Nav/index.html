@@ -102,10 +102,10 @@
         <script>
             const nav2 = document.querySelector('#main');
             const header2 = document.querySelector('#header');
-            const topOfNav = nav2.offsetTop;
+            let topOfNav = nav2.offsetTop;
             function fixNav(){
                 console.log(topOfNav, window.scrollY);
-                if (window.scrollY - header2.offsetHeight  >= topOfNav) {
+                if (window.scrollY  >= topOfNav) {
                     document.body.style.paddingTop = nav2.offsetHeight + 'px';
                     document.body.classList.add('fixed-nav');
                 } else {
@@ -116,7 +116,9 @@
             }
 
             window.addEventListener('scroll',fixNav);
-
+            window.addEventListener('resize', () => {
+                topOfNav = nav2.offsetTop;
+            })
         </script>
     </body>
 </html>
