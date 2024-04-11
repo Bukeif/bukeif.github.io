@@ -186,6 +186,11 @@ let nav = `
                                             <i class="ri-javascript-line"></i> 24-Sticky Nav
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="../25-Event Capture,Propagation,Bubbing and Once/index.html" class="dropdown__link">
+                                            <i class="ri-javascript-line"></i> 25-Event Capture,Propagation,Bubbing and Once
+                                        </a>
+                                    </li>
 
                                     <!-- DROPDOWN SUBMENU -->
                                     <li class="dropdown--subitem">
