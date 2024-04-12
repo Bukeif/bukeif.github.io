@@ -201,8 +201,8 @@ let nav = `
 
                                         <ul class="dropdown--submenu">
                                             <li>
-                                                <a href="../16-Mouse Move Shadow/index.html" class="dropdown__sublink">
-                                                    <i class="ri-javascript-line"></i> 16-Mouse Move Shadow
+                                                <a href="../26-Stripe Follow Along Nav/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 26-Stripe Follow Along Nav
                                                 </a>
                                             </li>
                                         </ul>
