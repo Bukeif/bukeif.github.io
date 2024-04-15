@@ -270,10 +270,8 @@
                 const background = document.querySelector('.dropdownBackground');
                 const nav3 = document.querySelector('.top');
 
-                function handleEnter() {
+                function handleEnter(e) {
                     this.classList.add('trigger-enter');
-                    // setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
-
                     setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
                     background.classList.add('open');
 
@@ -285,9 +283,9 @@
                         height: dropdownCoords.height,
                         width: dropdownCoords.width,
                         top: dropdownCoords.top - navCoords.top,
-                        left: dropdownCoords.left-navCoords.left
+                        left: dropdownCoords.left - navCoords.left
                     }
-
+                    console.log(dropdownCoords)
                     background.style.setProperty('width',`${coords.width}px`);
                     background.style.setProperty('height',`${coords.height}px`);
                     background.style.setProperty('transform',`translate(${coords.left}px, ${coords.top}px)`);
