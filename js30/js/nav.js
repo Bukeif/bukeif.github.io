@@ -205,6 +205,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 26-Stripe Follow Along Nav
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../27- Click and Drag/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 27- Click and Drag
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
