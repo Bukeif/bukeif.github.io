@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/nav.css" rel="stylesheet">
+        <!-- <link href="./style.css" rel="stylesheet"> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
+        <script src="../js/nav.js"></script>
+        <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <link rel="icon" href="https://fav.farm/🐬" />
+        <link rel="stylesheet" href="style.css">
+        <title>28-Video Speed Controller</title>
+        <script>
+            function redropdownMenu(){
+                const dropMenu = 
+                document.querySelectorAll(".dropdown--menu");
+                const dropSubMenu = 
+                    document.querySelectorAll(".dropdown--submenu");
+                    
+                dropMenu.forEach((menu) => {
+                    const menuRect = menu.getBoundingClientRect();
+                    if (menuRect.right > window.innerWidth)
+                    menu.style.right = 0;
+                });
+                dropSubMenu.forEach((subMenu) => {
+                    const subMenuRect = subMenu.getBoundingClientRect();
+                    if (subMenuRect.right > window.innerWidth)
+                    subMenu.style.left = `${-subMenuRect.width}px`;
+                });
+            }
+            window.addEventListener('resize', () =>{
+                redropdownMenu();
+            })
+            document.addEventListener('DOMContentLoaded', () => {
+                redropdownMenu();
+            });
+        </script>
+        <style>
+            
+        </style>
+    </head>
+
+
+    <body>
+        <header class="header" id="header">
+        </header>
+        <script>
+            let nv = $("#header");
+            nv.html(nav);
+        </script>
+        <!-- Main js -->
+        <script src="../js/main.js"></script>
+
+        <div class="sbody">
+            <div class="wrapper">
+                <video class="flex" width="765" height="430"  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" loop controls></video>
+                <div class="speed">
+                    <div class="speed-bar">1x</div>
+                </div>
+            </div>
+            <script>
+                const speed = document.querySelector('.speed');
+                const bar = speed.querySelector('.speed-bar');
+                const video = document.querySelector('.flex');
+
+                function handleMove(e) {
+                    const y = e.pageY - this.offsetTop;
+                    const percent = y / this.offsetHeight;
+                    const min = 0.4;
+                    const max = 4;
+                    const height = Math.round(percent * 100) + '%';
+                    const playbackRate = percent * (max - min ) + min;
+                    bar.style.height = height;
+                    bar.textContent = playbackRate.toFixed(2) + 'x';
+                    video.playbackRate = playbackRate;
+                    
+                    // console.log(percent);
+                }
+
+                speed.addEventListener('mousemove', handleMove)
+
+            </script>
+        </div>
+    </body>
+</html>

@@ -210,6 +210,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 27- Click and Drag
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../28-Video Speed Controller/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 28-Video Speed Controller
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
