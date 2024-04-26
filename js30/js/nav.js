@@ -215,6 +215,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 28-Video Speed Controller
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../29-CountDown Timer/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 29-CountDown Timer
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
