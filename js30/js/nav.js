@@ -220,6 +220,11 @@ let nav = `
                                                     <i class="ri-javascript-line"></i> 29-CountDown Timer
                                                 </a>
                                             </li>
+                                            <li>
+                                                <a href="../30-Whack A Mole/index.html" class="dropdown__sublink">
+                                                    <i class="ri-javascript-line"></i> 30-Whack A Mole
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
